@@ -1,31 +1,203 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Gordeyko — Haxe engineer & open-source maintainer</title>
+<meta name="description" content="Senior Software Engineer · Haxe expert & open-source maintainer. Cross-platform engines and tooling, real-time graphics, computer vision.">
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --card: #ffffff;
+    --border: #d1d9e0;
+    --accent: #c5680f;
+    --shadow: 0 1px 3px rgba(27,31,36,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #9198a1;
+      --card: #161b22;
+      --border: #30363d;
+      --accent: #ea8220;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 56px 20px 72px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; }
+  .tagline { font-size: 1.1rem; font-weight: 600; margin: 0 0 .75rem; }
+  .summary { color: var(--muted); margin: 0 0 1rem; }
+  .meta { color: var(--muted); font-size: .95rem; margin: 0 0 1.25rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 2.5rem; }
+  .badges img { display: block; height: 20px; }
+  h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: .04em;
+    color: var(--muted); margin: 2.5rem 0 1rem;
+    border-bottom: 1px solid var(--border); padding-bottom: .4rem;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .card-head {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: 10px; margin-bottom: 6px;
+  }
+  .card-head .name { font-size: 1.1rem; font-weight: 700; }
+  .card-head code {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1px 7px; font-size: .82rem; color: var(--muted);
+  }
+  .card-head .stars { margin-left: auto; }
+  .card-head .stars img { display: block; height: 20px; }
+  .card p { margin: 0; color: var(--fg); }
+  .card p.desc { color: var(--muted); font-size: .95rem; }
+  .work { padding-left: 1.1rem; margin: 0; }
+  .work li { margin-bottom: .6rem; color: var(--muted); }
+  .work strong { color: var(--fg); }
+  footer {
+    margin-top: 3rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem;
+  }
+</style>
+</head>
+<body>
+<main>
 
-	<head>
-		<title>AxGord's Projects</title>
-		<style>
-			body {
-        		background-color: #f1f1f1;
-				font-size: 30px;
-       			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			}
-			a {
-				color: #4183c4;
-				text-decoration: none;
-			}
-			li {
-				list-style: square;
-				color: brown;
-			}
-		</style>
-	</head>
+  <header>
+    <h1>Alexander Gordeyko</h1>
+    <p class="tagline">Senior Software Engineer · Haxe expert &amp; open-source maintainer</p>
+    <p class="summary">~20 years shipping production code: cross-platform engines and tooling, real-time graphics, computer vision. I like hard native problems and long-lived libraries.</p>
+    <p class="meta">📍 Limassol, Cyprus · 🌐 <a href="https://axgord.github.io">axgord.github.io</a> · 📫 <a href="mailto:axgord@gmail.com">axgord@gmail.com</a></p>
+    <div class="badges">
+      <a href="https://haxe.org"><img alt="Haxe" src="https://img.shields.io/badge/Haxe-EA8220?style=flat&logo=haxe&logoColor=white"></a>
+      <a href="https://www.typescriptlang.org"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"></a>
+      <a href="https://isocpp.org"><img alt="C++" src="https://img.shields.io/badge/C++17-00599C?style=flat&logo=cplusplus&logoColor=white"></a>
+      <a href="https://learn.microsoft.com/dotnet/csharp/"><img alt="C#" src="https://img.shields.io/badge/C%23-512BD4?style=flat&logo=csharp&logoColor=white"></a>
+      <a href="https://airsdk.harman.com/"><img alt="ActionScript 3" src="https://img.shields.io/badge/AS3-CC0000?style=flat&logo=adobe&logoColor=white"></a>
+    </div>
+  </header>
 
-	<body>
+  <h2>✨ Featured open source</h2>
 
-		<ui>
-			<li><a href="Pony">Haxe Pony Library</a></li>
-			<li><a href="ts-pony">TypeScript Pony Library</a></li>
-		</ui>
+  <div class="card">
+    <div class="card-head">
+      <span class="name">🦄 <a href="https://github.com/axgord/Pony">Pony</a></span>
+      <code>haxelib install pony</code>
+      <a class="stars" href="https://github.com/axgord/Pony/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/Pony?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Open-source cross-library and build toolchain for Haxe — develop, build, test and publish apps for Heaps, PixiJS, OpenFL, NodeJS, Electron, Cordova, PHP, Unity3D, Flash and Cocos Creator. XML-based UI system, powerful event system, scaffolding CLI. A long-running personal project, used in production across multiple commercial games and apps. MIT.</p>
+  </div>
 
-	</body>
+  <div class="card">
+    <div class="card-head">
+      <span class="name">🎬 <a href="https://github.com/soccertutor/extension-video-export">extension-video-export</a></span>
+      <code>haxelib install extension-video-export</code>
+    </div>
+    <p class="desc">Cross-platform H.264/MP4 video encoder for OpenFL/hxcpp — encode <code>BitmapData</code> frames to MP4 via native APIs, no FFmpeg. Per-platform backends: AVFoundation + IOSurface/Metal (macOS/iOS), Media Foundation + PBO readback (Windows), NDK AMediaCodec + EGL (Android), OpenH264 + minimp4 (Linux). GPU &amp; CPU paths, B-frame-aware buffer pooling, async dispatch. Built for <a href="https://www.soccertutor.com">Tactics Manager</a> (football-tactics animation software) to export tactic animations as video — open-sourced under MIT.</p>
+  </div>
 
+  <div class="card">
+    <div class="card-head">
+      <span class="name">💾 <a href="https://github.com/soccertutor/extension-file-save">extension-file-save</a></span>
+      <code>haxelib install extension-file-save</code>
+    </div>
+    <p class="desc">Cross-platform OpenFL/Lime native extension for saving files through native OS file pickers — NSSavePanel (macOS), UIDocumentPickerViewController (iOS), ACTION_CREATE_DOCUMENT (Android), Lime FileDialog (Windows/Linux). Desktop direct-write &amp; mobile copy-to-destination workflows. Built for <a href="https://www.soccertutor.com">Tactics Manager</a> (football-tactics animation software) to save users' work across platforms — open-sourced under MIT.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name">📜 <a href="https://github.com/axgord/anyparse">anyparse</a></span>
+    </div>
+    <p class="desc">Declarative parser &amp; writer driven by Haxe types. Build macros synthesize wrapper modules with cyclic type references — grammar-driven code generation, format- and language-agnostic.</p>
+  </div>
+
+  <h2>🤖 Claude Code plugins</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/claude-workflow">claude-workflow</a></span>
+      <a class="stars" href="https://github.com/axgord/claude-workflow/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/claude-workflow?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Drives AI agents through YAML state machines — guards, nested workflow stacks, live web dashboard.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/claude-notify-sounds">claude-notify-sounds</a></span>
+      <a class="stars" href="https://github.com/axgord/claude-notify-sounds/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/claude-notify-sounds?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Cross-platform sound notifications when the agent finishes or needs input.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/claude-keep-awake">claude-keep-awake</a></span>
+      <a class="stars" href="https://github.com/axgord/claude-keep-awake/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/claude-keep-awake?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Keeps the machine awake while the agent works.</p>
+  </div>
+
+  <h2>🧰 Tooling &amp; engine integration</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/FD-Haxe-Up">FD-Haxe-Up</a></span>
+      <a class="stars" href="https://github.com/axgord/FD-Haxe-Up/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/FD-Haxe-Up?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">FlashDevelop project templates &amp; features for Haxe — predates current Haxe IDE support.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/haxe-cc">haxe-cc</a></span>
+      <a class="stars" href="https://github.com/axgord/haxe-cc/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/haxe-cc?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Strongly-typed Haxe externs for the Cocos Creator game engine.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/hx-monaco-editor">hx-monaco-editor</a></span>
+      <a class="stars" href="https://github.com/axgord/hx-monaco-editor/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/hx-monaco-editor?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Haxe externs for the Monaco editor.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="name"><a href="https://github.com/axgord/hx-unity3d">hx-unity3d</a></span>
+      <a class="stars" href="https://github.com/axgord/hx-unity3d/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/axgord/hx-unity3d?style=flat&label=%E2%AD%90&color=DE8F00"></a>
+    </div>
+    <p class="desc">Archived experiment: cross-compiling Haxe to Unity-compatible C#.</p>
+  </div>
+
+  <h2>💼 Selected commercial work</h2>
+  <ul class="work">
+    <li><strong>Computer vision</strong> — designed a high-performance C++17 face/body recognition pipeline for Linux digital-signage players: real-time multi-camera detection &amp; tracking on YOLOv8 + ONNX Runtime, ByteTrack MOT and person re-identification. Mutex-free hot path, Intel IPP/SIMD, CMake + Docker multi-stage builds.</li>
+    <li><strong>Digital signage</strong> — built an AS3→Haxe converter and an Adobe AIR API alternative for browsers, WebOS and Tizen; stable cross-device media playback.</li>
+    <li><strong>Games</strong> — browser &amp; mobile titles: city-builder, 3D racing, platformer with level editor; AWS build &amp; deploy automation, shader VFX, weak-device optimization.</li>
+  </ul>
+
+  <footer>
+    📫 <a href="mailto:axgord@gmail.com">axgord@gmail.com</a> ·
+    🌐 <a href="https://axgord.github.io">axgord.github.io</a> ·
+    ❤️ <a href="https://paypal.me/axgorde">Sponsor via PayPal</a>
+  </footer>
+
+</main>
+</body>
 </html>
