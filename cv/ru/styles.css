@@ -435,6 +435,10 @@ ul li span.desc {
 	.theme-toggle:hover {
 		color: #708389;
 	}
+	.pdf-link {
+		margin-left: 4px;
+		letter-spacing: .04em;
+	}
 	.theme-toggle:focus-visible {
 		outline: 2px solid #708389;
 		outline-offset: 2px;
