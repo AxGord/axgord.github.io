@@ -390,6 +390,17 @@ ul li span.desc {
 	vertical-align: middle;
 }
 
+/* In the contact list the Telegram mark takes the box of the 18px Material icons beside it, the
+   mark itself drawn smaller and centred, so the icons share one column and the texts one start. */
+.contact .telegram {
+	width: 18px;
+	height: 18px;
+	background-size: 14px;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: top;
+}
+
 /* Web page only: the language switch is hidden in print, and the A4-wide two-column layout stacks on narrow screens. */
 .langswitch, .theme-toggle {
 	display: none;
@@ -433,6 +444,14 @@ ul li span.desc {
 	}
 	.theme-toggle .i-sun {
 		display: none;
+	}
+}
+
+/* Two columns: the switch sits in the content's top-right corner, so the content starts below it
+   and the first section frame does not run under the toggle. Stacked, the switch sits over the panel. */
+@media screen and (min-width: 721px) {
+	html.web .content {
+		padding-top: 40px;
 	}
 }
 
