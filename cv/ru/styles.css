@@ -391,7 +391,7 @@ ul li span.desc {
 }
 
 /* Web page only: the language switch is hidden in print, and the A4-wide two-column layout stacks on narrow screens. */
-.langswitch {
+.langswitch, .theme-toggle {
 	display: none;
 }
 
@@ -403,6 +403,36 @@ ul li span.desc {
 		right: 12px;
 		z-index: 1;
 		font-size: 12px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+	.theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		margin-left: 4px;
+		border-radius: 50%;
+		background: transparent;
+		color: inherit;
+		border: 1px solid #708389;
+		cursor: pointer;
+	}
+	.theme-toggle:hover {
+		color: #708389;
+	}
+	.theme-toggle:focus-visible {
+		outline: 2px solid #708389;
+		outline-offset: 2px;
+	}
+	.theme-toggle svg {
+		display: block;
+	}
+	.theme-toggle .i-sun {
+		display: none;
 	}
 }
 
@@ -434,4 +464,51 @@ ul li span.desc {
 	img, .text, .description {
 		overflow-wrap: anywhere;
 	}
+}
+
+/* Web page only, on screen only (the html.web class is set by the template for the web profile; print and the PDFs never see this).
+   Dark rules apply under the system preference unless the visitor picked light, or whenever they picked dark. */
+@media screen {
+	html.web:not([data-theme="light"]) { color-scheme: light dark; }
+}
+@media screen and (prefers-color-scheme: dark) {
+	html.web:not([data-theme="light"]),
+	html.web:not([data-theme="light"]) body { color: #d3d9db; background-color: #14191c; }
+	html.web:not([data-theme="light"]) a { color: #9db4bb; border-bottom-color: #9db4bb; }
+	html.web:not([data-theme="light"]) .panel { background-color: #222b30; }
+	html.web:not([data-theme="light"]) .title { border-bottom-color: #8aa0a7; }
+	html.web:not([data-theme="light"]) .header::after { border-color: #6b7d83; }
+	html.web:not([data-theme="light"]) .exp,
+	html.web:not([data-theme="light"]) .repo { border-bottom-color: #4a5a60; }
+	html.web:not([data-theme="light"]) ul li::before { color: #9db4bb; }
+	html.web:not([data-theme="light"]) ul li div span { background-color: #394850; }
+	html.web:not([data-theme="light"]) ul li div span.on { background-color: #8aa0a7; }
+	html.web:not([data-theme="light"]) .certificate-card { background-color: #1b2226; border-color: #38464c; }
+	html.web:not([data-theme="light"]) .repo .company a { color: #d3d9db; }
+	html.web:not([data-theme="light"]) .repo .lang { background-color: #5b6f76; color: #f1f4f5; }
+	html.web:not([data-theme="light"]) .theme-toggle { border-color: #8aa0a7; }
+	html.web:not([data-theme="light"]) .theme-toggle:hover { color: #9db4bb; }
+	html.web:not([data-theme="light"]) .theme-toggle .i-sun { display: block; }
+	html.web:not([data-theme="light"]) .theme-toggle .i-moon { display: none; }
+}
+@media screen {
+	html.web[data-theme="dark"] { color-scheme: dark; }
+	html.web[data-theme="dark"],
+	html.web[data-theme="dark"] body { color: #d3d9db; background-color: #14191c; }
+	html.web[data-theme="dark"] a { color: #9db4bb; border-bottom-color: #9db4bb; }
+	html.web[data-theme="dark"] .panel { background-color: #222b30; }
+	html.web[data-theme="dark"] .title { border-bottom-color: #8aa0a7; }
+	html.web[data-theme="dark"] .header::after { border-color: #6b7d83; }
+	html.web[data-theme="dark"] .exp,
+	html.web[data-theme="dark"] .repo { border-bottom-color: #4a5a60; }
+	html.web[data-theme="dark"] ul li::before { color: #9db4bb; }
+	html.web[data-theme="dark"] ul li div span { background-color: #394850; }
+	html.web[data-theme="dark"] ul li div span.on { background-color: #8aa0a7; }
+	html.web[data-theme="dark"] .certificate-card { background-color: #1b2226; border-color: #38464c; }
+	html.web[data-theme="dark"] .repo .company a { color: #d3d9db; }
+	html.web[data-theme="dark"] .repo .lang { background-color: #5b6f76; color: #f1f4f5; }
+	html.web[data-theme="dark"] .theme-toggle { border-color: #8aa0a7; }
+	html.web[data-theme="dark"] .theme-toggle:hover { color: #9db4bb; }
+	html.web[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+	html.web[data-theme="dark"] .theme-toggle .i-moon { display: none; }
 }
