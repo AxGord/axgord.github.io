@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('raleway-regular-webfont.woff2') format('woff2'), url('raleway-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Real faces for bold and italic: a synthesized one is embedded into the PDF as a Type 3 font,
+   every glyph an outline of its own — that alone cost ~150 KB per file. */
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('raleway-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('raleway-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Headless Chrome defaults to US Letter with ~1cm margins; the printed layout is A4 edge-to-edge. */
+@page {
+	size: A4;
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	min-height: 100%;
+	padding: 0;
+	margin: 0;
+	color: #444444;
+	background-color: #ffffff;
+	font-family: 'ralewayregular', sans-serif;
+}
+
+a {
+	color: #708389;
+	text-decoration: none;
+	border-bottom: 1px solid #708389;
+}
+
+body {
+	display: flex;
+}
+
+@media print {
+	.content {
+		min-width: 760px;
+	}
+}
+
+.panel {
+	width: 200px;
+	min-width: 200px;
+	min-height: 100%;
+	background-color: #D8DEE0;
+	text-align: center;
+	padding: 20px;
+}
+
+img {
+	width: 50%;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.title {
+	width: 100%;
+	display: inline-block;
+	text-align: left;
+	font-weight: bold;
+	border-bottom: 2px solid #708389;
+}
+
+.name {
+	font-size: 18px;
+}
+
+.info {
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	font-size: 12px;
+}
+
+.material-symbols-outlined {
+	font-size: 14px;
+	vertical-align:top;
+	margin-right: 10px;
+}
+
+/* The top gap is padding, not margin: a margin at the start of a page is truncated after an
+   unforced break, so a header opening a page would lose it. The frame sits on ::after to stay
+   clear of that padding. */
+.header {
+	position: relative;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	font-weight: bold;
+	width: 100%;
+	text-align: left;
+	padding: 23px 1px 3px;
+	/* .exp and .repo avoid breaking inside, so without this the header stays behind on the old page. */
+	break-after: avoid;
+	break-inside: avoid;
+}
+
+.header::after {
+	content: "";
+	position: absolute;
+	top: 20px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1px solid #444444;
+}
+
+.header::before {
+	content: "_.";
+	opacity: 0;
+}
+
+.contact {
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	font-size: 14px;
+}
+
+.contact .material-symbols-outlined {
+	font-size: 18px;
+}
+
+.term {
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	font-size: 12px;
+	padding-bottom: 10px !important;
+}
+
+.term p {
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-section {
+	width: 100%;
+	break-inside: avoid;
+}
+
+.panel .sidebar-section .header {
+	text-align: center;
+}
+
+.panel .sidebar-section .header::before {
+	content: "";
+}
+
+.panel .sidebar-section .text {
+	text-align: left;
+	overflow-wrap: anywhere;
+}
+
+.panel .sidebar-section .text a {
+	font-size: 12px;
+}
+
+.sub {
+	padding-top: 10px !important;
+	font-weight: bold;
+}
+
+ul {
+	list-style: none; /* Remove default bullets */
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+ul li::before {
+	content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: #708389; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 10px; /* Also needed for space (tweak if needed) */
+	font-size: 24px;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	width: 100%;
+
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	line-height: 24px;
+}
+
+ul li div {
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	margin: 0;
+	padding-left: 14px;
+}
+
+ul li div span {
+	width: 23%;
+	height: 4px;
+	background-color: #E8EBEC;
+}
+
+ul li div span.on {
+	background-color: #708389;
+}
+
+
+ul li span.desc {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	font-size: 12px;
+}
+
+.content {
+	flex-grow: 1;
+	padding: 20px;
+	padding-top: 10px;
+}
+
+.exp {
+	break-inside: avoid;
+	width: 100%;
+	padding: 2px;
+	border-bottom: #444444 dashed 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.exp:last-child {
+	border-bottom: none;
+}
+
+.exp .top {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.company {
+	font-weight: bold;
+}
+
+.position {
+	font-style: italic;
+}
+
+.description {
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.skill {
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.text {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.certificate-card {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 10px;
+	border: 1px solid #D8DEE0;
+	border-radius: 8px;
+	background-color: #F7F8F8;
+	break-inside: avoid;
+}
+
+.certificate-card > a {
+	display: block;
+	border-bottom: none;
+	flex: 0 0 46%;
+}
+
+.certificate-card img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: auto;
+	padding: 0;
+	border-radius: 6px;
+}
+
+.certificate-copy {
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.certificate-copy strong {
+	font-size: 16px;
+}
+
+.repo {
+	break-inside: avoid;
+	width: 100%;
+	padding: 2px;
+	border-bottom: #444444 dashed 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.repo:last-child {
+	border-bottom: none;
+}
+
+.repo .top {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.repo .company a {
+	color: #444444;
+}
+
+.repo .lang {
+	font-size: 12px;
+	color: #ffffff;
+	background-color: #708389;
+	padding: 2px 8px;
+	border-radius: 10px;
+	white-space: nowrap;
+}
+
+.repo .url {
+	padding-left: 30px;
+	padding-top: 4px;
+	font-size: 12px;
+}
+
+.repo .url a {
+	border-bottom: none;
+}
+
+.phone {
+	display: flex;
+	font-family: sans-serif;
+	align-items: center;
+}
+
+.whatsapp {
+	margin-left: 10px;
+	background-image: url('whatsapp.svg');
+	background-size: contain;
+	width: 14px;
+	height: 14px;
+}
+
+.telegram {
+	display: inline-block;
+	margin-right: 10px;
+	background-image: url('telegram.svg');
+	background-size: contain;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+}
+
+/* Web page only: the language switch is hidden in print, and the A4-wide two-column layout stacks on narrow screens. */
+.langswitch {
+	display: none;
+}
+
+@media screen {
+	.langswitch {
+		display: block;
+		position: absolute;
+		top: 8px;
+		right: 12px;
+		z-index: 1;
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	body {
+		display: block;
+	}
+	.panel {
+		width: auto;
+		min-width: 0;
+		box-sizing: border-box;
+		min-height: 0;
+	}
+	.content {
+		box-sizing: border-box;
+		padding: 10px 16px 20px;
+	}
+	.description, .skill {
+		padding-left: 12px;
+	}
+	.exp .top {
+		flex-wrap: wrap;
+		gap: 4px 12px;
+	}
+	.certificate-card {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	img, .text, .description {
+		overflow-wrap: anywhere;
+	}
+}
